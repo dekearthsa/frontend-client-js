@@ -96,8 +96,9 @@ const haddleAutoMode = () => {
                     FAN ACTIVE STATUS 
                 </div>
                 <div class="flex justify-between btn-action"> 
-                    <div class="set-btn">
-                        <div class="status-alert bg-red-500 rounded-full w-8 h-8"></div>
+                    <div class="flex animate-flicker">
+                        <div class=" status-alert bg-red-500 rounded-full w-8 h-8"></div>
+                        <div class="text-[10px] text-red-600 font-bold mt-2 ml-2">Working...</div>
                         <!-- <div class="bg-gray-500 rounded-full w-8 h-8"></div>
                         <div class="bg-green-500 rounded-full w-8 h-8"></div> -->
                     </div>
@@ -176,6 +177,7 @@ const haddleAutoMode = () => {
             </div>  
         </div>
     </div>
+    
 </template>
 
 <style>
@@ -225,6 +227,31 @@ const haddleAutoMode = () => {
     background: linear-gradient(140deg, rgba(255,255,255,1) 54%, rgba(255,244,151,1) 87%, rgba(196,196,59,1) 100%);
 }
 
-
+@keyframes animationFade {
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-o-keyframes animationFade{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-moz-keyframes animationFade{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-webkit-keyframes animationFade{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  .animate-flicker {
+     -webkit-animation: animationFade 2s infinite;
+     -moz-animation: animationFade 2s infinite;
+     -o-animation: animationFade 2s infinite;
+      animation: animationFade 2s infinite;
+  }
 
 </style>
